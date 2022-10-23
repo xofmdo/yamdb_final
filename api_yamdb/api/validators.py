@@ -1,8 +1,7 @@
 from datetime import datetime as dt
 
-from rest_framework import exceptions
-
 from django.core.exceptions import ValidationError
+from rest_framework import exceptions
 
 
 class MyUsernameValidator(object):

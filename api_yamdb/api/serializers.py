@@ -9,6 +9,7 @@ from rest_framework_simplejwt.tokens import AccessToken
 
 from core.models import User
 from reviews.models import Category, Comment, Genre, Review, Title
+
 from .utils import send_email
 from .validators import MyUsernameValidator
 

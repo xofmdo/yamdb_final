@@ -13,12 +13,12 @@ from rest_framework.viewsets import GenericViewSet, ModelViewSet
 from rest_framework_simplejwt.views import TokenViewBase
 
 from core.models import User
+from reviews.models import Category, Genre, Review, Title
+
 from .filters import TitleFilter
 from .permissions import IsAdmin, IsModerator, OwnerOnly, ReadOnly
-from reviews.models import Category, Genre, Review, Title
-from .serializers import (AdminRegistrationSerializer,
-                          CategorySerializer, CommentSerializer,
-                          CustomTokenSerializer,
+from .serializers import (AdminRegistrationSerializer, CategorySerializer,
+                          CommentSerializer, CustomTokenSerializer,
                           GenreSerializer, PatchUserSerializer,
                           RegistrationSerializer, ReviewSerializer,
                           TitleGetSerializer, TitlePostSerializer,
