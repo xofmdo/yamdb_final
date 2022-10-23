@@ -25,7 +25,7 @@ from .serializers import (AdminRegistrationSerializer, CategorySerializer,
 
 
 class CustomTokenView(TokenViewBase):
-    """View для полчения токена."""
+    """View для получения токена."""
 
     serializer_class = CustomTokenSerializer
 
@@ -83,7 +83,6 @@ class CreateListDestroyViewSet(
     ListModelMixin,
     GenericViewSet
 ):
-
     permission_classes = [IsAdmin | ReadOnly]
     lookup_field = 'slug'
     filter_backends = (SearchFilter,)
@@ -91,19 +90,16 @@ class CreateListDestroyViewSet(
 
 
 class CategoryViewSet(CreateListDestroyViewSet):
-
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
 
 class GenreViewSet(CreateListDestroyViewSet):
-
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
 
 
 class TitleViewSet(ModelViewSet):
-
     queryset = Title.objects.annotate(
         rating=Avg('reviews__score')
     ).order_by('name')
@@ -121,7 +117,6 @@ class TitleViewSet(ModelViewSet):
 
 
 class ReviewViewSet(ModelViewSet):
-
     serializer_class = ReviewSerializer
     permission_classes = [
         IsModerator
@@ -146,7 +141,6 @@ class ReviewViewSet(ModelViewSet):
 
 
 class CommentViewSet(ModelViewSet):
-
     serializer_class = CommentSerializer
     permission_classes = [
         IsModerator
