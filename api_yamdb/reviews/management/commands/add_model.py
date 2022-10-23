@@ -4,9 +4,8 @@ import os
 from django.core.management.base import BaseCommand
 
 from api_yamdb.settings import BASE_DIR
-from reviews.models import Category, Comment, Genre, Review, Title
 from core.models import User
-
+from reviews.models import Category, Comment, Genre, Review, Title
 
 
 class Command(BaseCommand):

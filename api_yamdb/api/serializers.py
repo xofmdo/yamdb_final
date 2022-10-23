@@ -108,7 +108,7 @@ class PatchUserSerializer(UserSerializer):
     def validate_role(self, value):
         user = self.context.get('request').user
         if not user.is_admin:
-            value = user.role
+            return user.role
         return value
 
 
