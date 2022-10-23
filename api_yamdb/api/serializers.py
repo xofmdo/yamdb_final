@@ -6,7 +6,6 @@ from rest_framework import exceptions, serializers
 from rest_framework_simplejwt.serializers import TokenObtainSerializer
 from rest_framework_simplejwt.settings import api_settings
 from rest_framework_simplejwt.tokens import AccessToken
-
 from core.models import User
 from reviews.models import Category, Comment, Genre, Review, Title
 
@@ -41,10 +40,7 @@ class CustomTokenSerializer(TokenObtainSerializer):
         user = authenticate(**authenticate_kwargs)
         if not api_settings.USER_AUTHENTICATION_RULE(user):
             raise exceptions.ParseError
-        data = {
-            'access': str(self.get_token(user))
-        }
-        return data
+        return {'access': str(self.get_token(user))}
 
 
 class RegistrationSerializer(serializers.ModelSerializer):

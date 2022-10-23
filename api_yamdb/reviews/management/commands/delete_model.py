@@ -1,5 +1,4 @@
 from django.core.management.base import BaseCommand
-
 from core.models import User
 from reviews.models import Category, Comment, Genre, Review, Title
 
@@ -25,5 +24,5 @@ class Command(BaseCommand):
         if model not in self.files:
             print(f'Model "{model}" not in {self.files.keys()}')
             return
-        Obj = self.files.get(model)
-        Obj.objects.all().delete()
+        obj = self.files.get(model)
+        obj.objects.all().delete()

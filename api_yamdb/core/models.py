@@ -1,6 +1,5 @@
 from django.contrib.auth.models import AbstractUser, AnonymousUser, UserManager
 from django.db import models
-
 from core.constants import ADMIN, MODERATOR, ROLES, USER
 
 
