@@ -384,9 +384,7 @@ python manage.py fill_db -m Category -f category
 <details>
     <summary style="font-size: 16pt; font-weight: bold">Автор</summary>
 
-[Кузьмич Александр](https://github.com/xofmdo) 
 
-[Telegram для связи](https://t.me/xofmdo)
 </details>
 
 ***
