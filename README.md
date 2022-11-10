@@ -384,7 +384,6 @@ python manage.py fill_db -m Category -f category
 <details>
     <summary style="font-size: 16pt; font-weight: bold">Автор</summary>
 
-
 </details>
 
 ***
